@@ -892,7 +892,7 @@ added: v0.5.0
 
 The operating system CPU architecture for which the Node.js binary was compiled.
 Possible values are: `'arm'`, `'arm64'`, `'ia32'`, `'loong64'`, `'mips'`,
-`'mipsel'`, `'ppc'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`, and `'x64'`.
+`'mipsel'`, `'ppc64'`, `'riscv64'`, `'s390'`, `'s390x'`, and `'x64'`.
 
 ```mjs
 import { arch } from 'node:process';
@@ -4003,7 +4003,7 @@ added:
   - v14.18.0
 -->
 
-> Stability: 1 - Experimental
+> Stability: 1 - Experimental: Use [`module.setSourceMapsSupport()`][] instead.
 
 * `val` {boolean}
 
@@ -4015,6 +4015,9 @@ It provides same features as launching Node.js process with commandline options
 
 Only source maps in JavaScript files that are loaded after source maps has been
 enabled will be parsed and loaded.
+
+This implies calling `module.setSourceMapsSupport()` with an option
+`{ nodeModules: true, generatedCode: true }`.
 
 ## `process.setUncaughtExceptionCaptureCallback(fn)`
 
@@ -4050,7 +4053,7 @@ added:
   - v18.19.0
 -->
 
-> Stability: 1 - Experimental
+> Stability: 1 - Experimental: Use [`module.getSourceMapsSupport()`][] instead.
 
 * {boolean}
 
@@ -4517,7 +4520,9 @@ cases:
 [`console.error()`]: console.md#consoleerrordata-args
 [`console.log()`]: console.md#consolelogdata-args
 [`domain`]: domain.md
+[`module.getSourceMapsSupport()`]: module.md#modulegetsourcemapssupport
 [`module.isBuiltin(id)`]: module.md#moduleisbuiltinmodulename
+[`module.setSourceMapsSupport()`]: module.md#modulesetsourcemapssupportenabled-options
 [`net.Server`]: net.md#class-netserver
 [`net.Socket`]: net.md#class-netsocket
 [`os.constants.dlopen`]: os.md#dlopen-constants
