@@ -2096,7 +2096,9 @@ added:
  - v23.0.0
  - v22.10.0
 changes:
-    - version: REPLACEME
+    - version:
+      - v23.7.0
+      - v22.14.0
       pr-url: https://github.com/nodejs/node/pull/56610
       description: This error is no longer thrown on valid yet unsupported syntax.
 -->
@@ -2117,6 +2119,13 @@ An invalid URL was passed to the [WHATWG][WHATWG URL API] [`URL`
 constructor][`new URL(input)`] or the legacy [`url.parse()`][] to be parsed.
 The thrown error object typically has an additional property `'input'` that
 contains the URL that failed to parse.
+
+<a id="ERR_INVALID_URL_PATTERN"></a>
+
+### `ERR_INVALID_URL_PATTERN`
+
+An invalid URLPattern was passed to the [WHATWG][WHATWG URL API] \[`URLPattern`
+constructor]\[`new URLPattern(input)`] to be parsed.
 
 <a id="ERR_INVALID_URL_SCHEME"></a>
 
@@ -3123,7 +3132,9 @@ try {
 ### `ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX`
 
 <!-- YAML
-added: REPLACEME
+added:
+  - v23.7.0
+  - v22.14.0
 -->
 
 The provided TypeScript syntax is unsupported.
@@ -3326,6 +3337,12 @@ The requested functionality is not supported in worker threads.
 ### `ERR_ZLIB_INITIALIZATION_FAILED`
 
 Creation of a [`zlib`][] object failed due to incorrect configuration.
+
+<a id="ERR_ZSTD_INVALID_PARAM"></a>
+
+### `ERR_ZSTD_INVALID_PARAM`
+
+An invalid parameter key was passed during construction of a Zstd stream.
 
 <a id="HPE_CHUNK_EXTENSIONS_OVERFLOW"></a>
 
